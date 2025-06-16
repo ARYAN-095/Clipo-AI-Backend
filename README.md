@@ -3,7 +3,11 @@
 This project implements the Clipo AI Backend Assignment, a video processing API built with FastAPI, MongoDB, Celery, Redis, and FFmpeg. Uploaded videos are stored locally, processed in the background to extract duration and generate a thumbnail, and metadata is stored in MongoDB.
 
 
-## 🔥 Key Highlights (What Recruiters Will Notice)
+<br>
+
+
+
+#  🔥 Key Highlights (What Recruiters Will Notice)
 
 - **Production-Grade Architecture**: Async FastAPI + Celery background tasks + Redis + MongoDB
 - **Efficient Processing**: FFmpeg-powered video analysis (duration extraction + thumbnail generation)
@@ -12,9 +16,9 @@ This project implements the Clipo AI Backend Assignment, a video processing API 
 - **Clean Codebase**: Modular organization with separation of concerns
 - **Professional Practices**: Environment variables, proper error handling, and status tracking
 
+<br>
 
-
-## 🛠 Tech Stack Deep Dive
+# 🛠 Tech Stack Deep Dive
 
 | Component       | Technology             | Purpose                          |
 |-----------------|------------------------|----------------------------------|
@@ -27,13 +31,13 @@ This project implements the Clipo AI Backend Assignment, a video processing API 
 
 
 
-
-
+<br>
+<br>
 
   
-## 🌟 Core Features
+#  🌟 Core Features
 
-### 1. Intelligent Video Processing Pipeline
+## 1. Intelligent Video Processing Pipeline
 ```mermaid
 graph LR
 A[Video Upload] --> B[(MongoDB Record)]
@@ -47,7 +51,7 @@ F --> G[Status: Done]
 
 
 
-### 2. Robust API Endpoints
+## 2. Robust API Endpoints
 
 ```
 Endpoint                    Method	      Functionality
@@ -58,7 +62,7 @@ Endpoint                    Method	      Functionality
 /thumbnails/{filename}	     GET	    Access generated thumbnails
 ```
 
-3. Metadata Management
+## 3. Metadata Management
 Stores comprehensive video information in MongoDB:
 
 ```
@@ -72,7 +76,8 @@ Stores comprehensive video information in MongoDB:
 ```
 
 
-
+<br>
+<br>
   
 # 📂 Directory Structure
   ```
@@ -98,23 +103,24 @@ Stores comprehensive video information in MongoDB:
     └── thumbnails/              # Generated thumbnails
 ```
 
-
+<br>
+<br>
 
 
 # ⚡ Quick Start with Docker (Production-Ready Setup)
 
  
- # 1. Configure environment
+## 1. Configure environment
 cp .env.example .env
 
-# 2. Build and launch all services
+## 2. Build and launch all services
 docker-compose up --build -d
 
-# 3. Access API docs at:
+## 3. Access API docs at:
 http://localhost:8000/docs
 
-
-
+<br>
+<br>
 
 
 #  📋 Environment Variables
@@ -128,6 +134,8 @@ http://localhost:8000/docs
      GCS_CREDENTIALS_JSON=       # Path inside container to credentials.json
    ```
 
+
+<br>
 
 # 🔧 FFmpeg Commands
   ## Extract duration (used in extract_duration):
@@ -143,25 +151,27 @@ http://localhost:8000/docs
   -vframes 1 -q:v 2 storage/thumbnails/example.jpg
   ```
 
+<br>
+
 # 🔄 API Usage Examples
 
- 1. Upload video:
+ ## 1. Upload video:
     ```
     curl -X POST "http://localhost:8000/api/upload-video/" \
   -F "file=@/path/to/example.mp4"
     ```
 
-2. Check status:
+## 2. Check status:
   ```
   curl "http://localhost:8000/api/video-status/<id>"
   ```
 
-3. Get metadata:
+## 3. Get metadata:
    ```
    curl "http://localhost:8000/api/video-metadata/<id>"
    ```
 
-4. View thumbnail:
-     Open in browser:  http://localhost:8000/thumbnails/example.jpg
+## 4. View thumbnail:
+     Open in browser:  ```http://localhost:8000/thumbnails/example.jpg```
 
           
