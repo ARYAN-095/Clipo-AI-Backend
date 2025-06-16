@@ -162,10 +162,10 @@ Stores comprehensive video information in MongoDB:
 # 🔄 API Usage Examples
 
  ## 1. Upload video:
-    ```
-    curl -X POST "http://localhost:8000/api/upload-video/" \
-    -F "file=@/path/to/example.mp4"
-    ```
+  ```
+        curl -X POST "http://localhost:8000/api/upload-video/" \
+        -F "file=@/path/to/example.mp4"
+   ```
 
 ## 2. Check status:
   ```
