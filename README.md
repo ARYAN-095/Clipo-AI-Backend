@@ -145,17 +145,17 @@ Stores comprehensive video information in MongoDB:
 
 # 🔧 FFmpeg Commands
   ## Extract duration (used in extract_duration):
-     ```
+  ```
      ffprobe -v error -show_entries format=duration \
-  -of default=noprint_wrappers=1:nokey=1 \
-  storage/videos/example.mp4
+     -of default=noprint_wrappers=1:nokey=1 \
+     storage/videos/example.mp4
   ```
 
   ## Generate thumbnail (used in generate_thumbnail):
      ```
      ffmpeg -ss <timestamp_in_seconds> -i storage/videos/example.mp4 \
-  -vframes 1 -q:v 2 storage/thumbnails/example.jpg
-  ```
+    -vframes 1 -q:v 2 storage/thumbnails/example.jpg
+    ```
 
 <br>
 
@@ -164,7 +164,7 @@ Stores comprehensive video information in MongoDB:
  ## 1. Upload video:
     ```
     curl -X POST "http://localhost:8000/api/upload-video/" \
-  -F "file=@/path/to/example.mp4"
+    -F "file=@/path/to/example.mp4"
     ```
 
 ## 2. Check status:
@@ -177,7 +177,9 @@ Stores comprehensive video information in MongoDB:
    curl "http://localhost:8000/api/video-metadata/<id>"
    ```
 
-## 4. View thumbnail:
-     Open in browser:  ```http://localhost:8000/thumbnails/example.jpg```
+## 4. View thumbnail:  Open in browser:  
+  ```
+   http://localhost:8000/thumbnails/example.jpg
+  ```
 
           
