@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./:/usr/src/app
+      - ./storage:/usr/src/app/storage
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - DB_NAME=${DB_NAME}
+      - REDIS_URL=${REDIS_URL}
+      - VIDEO_STORAGE_PATH=/usr/src/app/storage/videos
+      - THUMBNAIL_STORAGE_PATH=/usr/src/app/storage/thumbnails
+    depends_on:
+      - redis
+      - mongo
+
+  worker:
+    build: .
+    command: celery -A celery_worker.celery worker --loglevel=info --pool=solo
+    volumes:
+      - ./:/usr/src/app
+      - ./storage:/usr/src/app/storage
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - DB_NAME=${DB_NAME}
+      - REDIS_URL=${REDIS_URL}
+      - VIDEO_STORAGE_PATH=/usr/src/app/storage/videos
+      - THUMBNAIL_STORAGE_PATH=/usr/src/app/storage/thumbnails
+    depends_on:
+      - redis
+      - mongo
+
+  redis:
+    image: redis:6
+    ports:
+      - "6380:6379"
+
+  mongo:
+    image: mongo:5
+    ports:
+      - "27017:27017"

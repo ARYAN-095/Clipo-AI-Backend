@@ -1,0 +1,23 @@
+# .dockerignore
+storage/
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.flv
+*.webm
+*.jpg
+*.png
+*.gif
+*.zip
+*.tar.gz
+*.tar
+*.log
+__pycache__/
+*.pyc
+.env
+.git
+.gitignore
+node_modules/
+cipla
+
