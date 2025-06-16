@@ -43,14 +43,14 @@ F --> G[Status: Done]
 
 ### 2. Robust API Endpoints
 
-
+```
 Endpoint	                Method	      Functionality
 
 /api/upload-video/	         POST   	Securely upload videos (multipart)
 /api/video-status/{id}	     GET	    Real-time processing status
 /api/video-metadata/{id}	 GET	    Retrieve full video metadata
 /thumbnails/{filename}	     GET	    Access generated thumbnails
-
+```
 
 3. Metadata Management
 Stores comprehensive video information in MongoDB:
