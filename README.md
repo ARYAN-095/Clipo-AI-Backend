@@ -111,13 +111,19 @@ Stores comprehensive video information in MongoDB:
 
  
 ## 1. Configure environment
-   ```cp .env.example .env```
+   ```
+   cp .env.example .env
+```
  
 ## 2. Build and launch all services
-    ```docker-compose up --build -d```
+    ```
+    docker-compose up --build -d
+    ```
 
 ## 3. Access API docs at:
-      ```http://localhost:8000/docs``` 
+      ```
+      http://localhost:8000/docs
+      ``` 
 
 <br>
 <br>
