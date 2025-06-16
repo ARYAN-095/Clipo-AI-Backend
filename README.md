@@ -25,6 +25,12 @@ This project implements the Clipo AI Backend Assignment, a video processing API 
 | **Infra**       | Docker Compose         | Container orchestration          |
 | **Storage**     | Local/Google Cloud     | Scalable file storage            |
 
+
+
+
+
+
+  
 ## 🌟 Core Features
 
 ### 1. Intelligent Video Processing Pipeline
@@ -65,6 +71,9 @@ Stores comprehensive video information in MongoDB:
 }
 ```
 
+
+
+  
 # 📂 Directory Structure
   ```
   clipo-ai-backend/
@@ -89,6 +98,9 @@ Stores comprehensive video information in MongoDB:
     └── thumbnails/              # Generated thumbnails
 ```
 
+
+
+
 # ⚡ Quick Start with Docker (Production-Ready Setup)
 
  
@@ -100,6 +112,9 @@ docker-compose up --build -d
 
 # 3. Access API docs at:
 http://localhost:8000/docs
+
+
+
 
 
 #  📋 Environment Variables
