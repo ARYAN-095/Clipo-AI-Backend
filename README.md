@@ -152,10 +152,10 @@ Stores comprehensive video information in MongoDB:
   ```
 
   ## Generate thumbnail (used in generate_thumbnail):
-     ```
-     ffmpeg -ss <timestamp_in_seconds> -i storage/videos/example.mp4 \
-    -vframes 1 -q:v 2 storage/thumbnails/example.jpg
-    ```
+  ```
+        ffmpeg -ss <timestamp_in_seconds> -i storage/videos/example.mp4 \
+        -vframes 1 -q:v 2 storage/thumbnails/example.jpg
+  ```
 
 <br>
 
@@ -169,12 +169,12 @@ Stores comprehensive video information in MongoDB:
 
 ## 2. Check status:
   ```
-  curl "http://localhost:8000/api/video-status/<id>"
+        curl "http://localhost:8000/api/video-status/<id>"
   ```
 
 ## 3. Get metadata:
    ```
-   curl "http://localhost:8000/api/video-metadata/<id>"
+       curl "http://localhost:8000/api/video-metadata/<id>"
    ```
 
 ## 4. View thumbnail:  Open in browser:  
